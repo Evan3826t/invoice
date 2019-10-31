@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>發票兌獎系統</title>
+    <style>
+        .main{
+            width: 800px;
+            height: 600px;
+            background-color: aquamarine;
+            margin: auto;
+            position: relative;
+        }
+        .left{
+            width: 200px;
+            height: 100%;
+            background-color: blanchedalmond;
+            position: absolute;
+        }
+        .right{
+            width: 600px;
+            height: 100%;
+            background-color: rgb(128, 114, 131);
+            position: absolute;
+            left: 200px;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    
+        <div class="main">
+            <div class="left">
+                <a href="my_invoice.html">我的發票</a><br>
+                <a href="award.php">兌獎</a><br>
+                <a href="award_number.html">輸入獎號</a><br>
+            </div>
+            <div class="right">
+                <form action="invoice.php" method="POST">
+                    <div>統一發票兌獎</div>
+                    <div>年分：<input type="text" name="year" id="year" maxlength="4"></div>
+                    <div>期別：
+                        <select name="period" id="period">
+                            <option value="1">1,2月</option>
+                            <option value="2">3,4月</option>
+                            <option value="3">5,6月</option>
+                            <option value="4">7,8月</option>
+                            <option value="5">9,10月</option>
+                            <option value="6">11,12月</option>
+                        </select>
+                    </div>
+                    <div>發票號碼：<input type="text" name="num" id="num" maxlength="8"></div>
+                    <div>發票金額：<input type="text" name="expend" id="expend"></div>
+                    <input type="submit" value="送出">
+                </form>
+            </div>
+        </div>
+   
+</body>
+</html>
