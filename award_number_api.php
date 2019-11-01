@@ -15,4 +15,5 @@ $sql = "insert into `award`( `year`, `period`, `sp1`, `sp2`, `jackpot1`, `jackpo
         VALUES ('$year', '$period', '$sp1', '$sp2', '$jackpot1', '$jackpot2', '$jackpot3', '$six1', '$six2', '$six3') ";
 $pdo->query($sql);
 header("location:award.php");
+
 ?>

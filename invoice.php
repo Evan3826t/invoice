@@ -11,9 +11,10 @@
 include("base.php");
 $year = $_POST['year'];
 $period = $_POST['period'];
+$Enum = $_POST['Enum'];
 $num = $_POST['num'];
 $expend = $_POST['expend'];
-$sql = "insert into `deposited`(`year`, `period`, `num`, `expend`) VALUES ('$year', '$period', '$num', '$expend')";
+$sql = "insert into `deposited`(`year`, `period`, `Enum`,`num`, `expend`) VALUES ('$year', '$period', '$Enum', '$num', '$expend')";
 $pdo->query($sql);
 header("location:index.html");
 
