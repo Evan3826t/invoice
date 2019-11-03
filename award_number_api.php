@@ -1,5 +1,5 @@
 <?php
-include("base.php");
+include_once "base.php";
 $year = $_POST['year'];
 $period = $_POST['period'];
 $sp1 = $_POST['sp1'];

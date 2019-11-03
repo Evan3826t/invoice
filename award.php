@@ -48,76 +48,89 @@
 
         </div>
         <div class="right">
-            <table>
-            <?php
-                if(!empty($_GET['period'])){
-                    $row=selectP("award", $_GET['period']);
-                    ?> 
+            <form action="number_check.php" method="POST">
+                <table>
+                <?php
+                    if(!empty($_GET['period'])){
+                        $row=selectF("award", $_GET['period']);
+                        ?> 
+                        <tr>
+                        <td>年度</td>
+                        <td><?=$row["year"]?></td>
+                        <td></td>
+                    </tr>
                     <tr>
-                    <td>年度</td>
-                    <td><?=$row["1"]?></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>月份</td>
-                    <td><?=$row['period']?></td>
-                    <td>獎金</td>
-                </tr>
-                <tr>
-                    <td>特別獎</td>
-                    <td><?=$row['sp1']?></td>
-                    <td>1000萬元</td>
-                </tr>
-                <tr>
-                    <td>特獎</td>
-                    <td><?=$row['sp2']?></td>
-                    <td>200萬元</td>
-                </tr>
-                <tr>
-                    <td>頭獎</td>
-                    <td><?=$row['jackpot1']?><br>
-                        <?=$row['jackpot2']?><br>
-                        <?=$row['jackpot3']?></td>
-                    </td>
-                    <td>20萬元</td>
-                </tr>
-                <tr>
-                    <td>二獎</td>
-                    <td>末 7 位數號碼與頭獎中獎號碼末 7 位相同者</td>
-                    <td>4萬元</td>
-                </tr>
-                <tr>
-                    <td>三獎</td>
-                    <td>末 6 位數號碼與頭獎中獎號碼末 6 位相同者</td>
-                    <td>1萬元</td>
-                </tr>
-                <tr>
-                    <td>四獎</td>
-                    <td>末 5 位數號碼與頭獎中獎號碼末 5 位相同者</td>
-                    <td>4千元</td>
-                </tr>
-                <tr>
-                    <td>五獎</td>
-                    <td>末 4 位數號碼與頭獎中獎號碼末 4 位相同者</td>
-                    <td>1千元</td>
-                </tr>
-                <tr>
-                    <td>六獎</td>
-                    <td>末 3 位數號碼與頭獎中獎號碼末 3 位相同者</td>
-                    <td>2百元</td>
-                </tr>
-                <tr>
-                    <td>增開六獎</td>
-                    <td><?=$row['six1']?><br>
-                        <?=$row['six2']?><br>
-                        <?=$row['six3']?></td>
-                    </td>
-                    <td>2百元</td>
-                </tr>
-                    <?php
-                }
-            ?>
-            </table>
+                        <td>月份</td>
+                        <td><?=$row['period']?></td>
+                        <td>獎金</td>
+                    </tr>
+                    <tr>
+                        <td>特別獎</td>
+                        <td><?=$row['sp1']?></td>
+                        <td>1000萬元</td>
+                    </tr>
+                    <tr>
+                        <td>特獎</td>
+                        <td><?=$row['sp2']?></td>
+                        <td>200萬元</td>
+                    </tr>
+                    <tr>
+                        <td>頭獎</td>
+                        <td><?=$row['jackpot1']?><br>
+                            <?=$row['jackpot2']?><br>
+                            <?=$row['jackpot3']?></td>
+                        </td>
+                        <td>20萬元</td>
+                    </tr>
+                    <tr>
+                        <td>二獎</td>
+                        <td>末 7 位數號碼與頭獎中獎號碼末 7 位相同者</td>
+                        <td>4萬元</td>
+                    </tr>
+                    <tr>
+                        <td>三獎</td>
+                        <td>末 6 位數號碼與頭獎中獎號碼末 6 位相同者</td>
+                        <td>1萬元</td>
+                    </tr>
+                    <tr>
+                        <td>四獎</td>
+                        <td>末 5 位數號碼與頭獎中獎號碼末 5 位相同者</td>
+                        <td>4千元</td>
+                    </tr>
+                    <tr>
+                        <td>五獎</td>
+                        <td>末 4 位數號碼與頭獎中獎號碼末 4 位相同者</td>
+                        <td>1千元</td>
+                    </tr>
+                    <tr>
+                        <td>六獎</td>
+                        <td>末 3 位數號碼與頭獎中獎號碼末 3 位相同者</td>
+                        <td>2百元</td>
+                    </tr>
+                    <tr>
+                        <td>增開六獎</td>
+                        <td><?=$row['six1']?><br>
+                            <?=$row['six2']?><br>
+                            <?=$row['six3']?></td>
+                        </td>
+                        <td>2百元</td>
+                    </tr>
+
+                        <?php
+                    }
+                ?>
+                </table>
+                <input type="hidden" id='period' name='period' value="<?=$_GET['period']?>">
+                <input type="hidden" id='sp1' name='sp1' value="<?=$row['sp1']?>">
+                <input type="hidden" id='sp2' name='sp2' value="<?=$row['sp2']?>">
+                <input type="hidden" id='jackpot1' name='jackpot1' value="<?=$row['jackpot1']?>">
+                <input type="hidden" id='jackpot2' name='jackpot2' value="<?=$row['jackpot2']?>">
+                <input type="hidden" id='jackpot3' name='jackpot3' value="<?=$row['jackpot3']?>">
+                <input type="hidden" id='six1' name='six1' value="<?=$row['six1']?>">
+                <input type="hidden" id='six2' name='six2' value="<?=$row['six2']?>">
+                <input type="hidden" id='six3' name='six3' value="<?=$row['six3']?>">
+                <input type="submit" value="開獎">
+            </form>
         </div>
     </div>
 </body>

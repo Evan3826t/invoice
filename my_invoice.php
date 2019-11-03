@@ -58,7 +58,7 @@
                     </tr>
                 <?php
                     if(!empty($_GET['period'])){
-                        $row=selectP("deposited", $_GET['period']);
+                        $row=selectFA("deposited", $_GET['period']);
                         foreach($row as $invoice){
                             ?>
                             <tr>
