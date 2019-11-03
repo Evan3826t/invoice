@@ -36,7 +36,7 @@
 </head>
 <body>
     <?php
-        include("base.php");
+        include_once ("base.php");
     ?>
     <div class="main"> 
         <div class="left">
@@ -58,9 +58,7 @@
                     </tr>
                 <?php
                     if(!empty($_GET['period'])){
-                        $period = $_GET['period'];
-                        $sql = "select `Enum`,`num`, `expend` from `deposited` where `period`='$period'";
-                        $row = $pdo->query($sql)->fetchAll();
+                        $row=selectP("deposited", $_GET['period']);
                         foreach($row as $invoice){
                             ?>
                             <tr>
