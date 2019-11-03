@@ -1,0 +1,100 @@
+.main{
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    position: relative;
+    box-shadow: 5px 5px 5px black;
+    margin-top: 50px;
+    border: 2px solid gray;
+}
+.left{
+    width: 150px;
+    height: 100%;
+    background-color: rgb(61, 61, 61);
+    position: absolute;
+    text-align: center;
+    padding-top: 50px;
+    box-sizing: border-box;
+    color: white;
+}
+.right{
+    width: 650px;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    left: 150px;
+    padding: 50px;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+
+}
+.back{
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+}
+.btn{
+    height: 40px;
+    line-height: 40px;
+}
+.btnA{
+    height: 40px;
+    line-height: 40px;
+    background-color: rgb(87, 87, 87);
+}
+.btnA2{
+    height: 40px;
+    line-height: 40px;
+    background-color: rgb(87, 87, 87);
+}
+.btnA3{
+    height: 40px;
+    line-height: 40px;
+    background-color: rgb(87, 87, 87);
+}
+.btnA::after{
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    left: 48px;
+    transform: rotate(45deg);
+
+}
+.btnA2::after{
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    left: 42px;
+    transform: rotate(45deg);
+}
+.btnA3::after{
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    left: 36px;
+    transform: rotate(45deg);
+}
+.right div{
+    margin: 10px;
+    font-size: 24px;
+}
+.notYet{
+    border: 1px solid black;
+    width: 75px;
+    font-size: 14px;
+    box-shadow: 2px 2px 2px gray;
+    padding: 3px;
+}

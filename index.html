@@ -5,38 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>發票兌獎系統</title>
-    <style>
-        .main{
-            width: 800px;
-            height: 600px;
-            background-color: aquamarine;
-            margin: auto;
-            position: relative;
-        }
-        .left{
-            width: 200px;
-            height: 100%;
-            background-color: blanchedalmond;
-            position: absolute;
-        }
-        .right{
-            width: 600px;
-            height: 100%;
-            background-color: rgb(128, 114, 131);
-            position: absolute;
-            left: 200px;
-            padding: 50px;
-            box-sizing: border-box;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
 </head>
 <body>
     
         <div class="main">
             <div class="left">
-                <a href="my_invoice.php">我的發票</a><br>
-                <a href="award.php">兌獎</a><br>
-                <a href="award_number.html">輸入獎號</a><br>
+                <a href="my_invoice.php"><div class="btn"><i class="fas fa-piggy-bank"></i> 我的發票</div></a>
+                <a href="award.php"><div class="btn"><i class="fas fa-trophy"></i> 開始兌獎</div></a>
+                <a href="award_number.html"><div class="btn"><i class="fas fa-keyboard"></i> 輸入獎號</div></a>
             </div>
             <div class="right">
                 <form action="invoice.php" method="POST">

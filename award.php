@@ -6,30 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>發票兌獎</title>
-    <style>
-        .main{
-            width: 800px;
-            height: 600px;
-            background-color: aquamarine;
-            margin: auto;
-            position: relative;
-        }
-        .left{
-            width: 200px;
-            height: 100%;
-            background-color: blanchedalmond;
-            position: absolute;
-        }
-        .right{
-            width: 600px;
-            height: 100%;
-            background-color: rgb(128, 114, 131);
-            position: absolute;
-            left: 200px;
-            padding: 50px;
-            box-sizing: border-box;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    
+    
+   
 </head>
 <body>
     <?php
@@ -38,13 +19,42 @@
     <div class="main">
         <div class="left">
             <h2>兌獎區</h2>
-            <div><a href="award.php?period=1">1,2月</a></div>
-            <div><a href="award.php?period=2">3,4月</a></div>
-            <div><a href="award.php?period=3">5,6月</a></div>
-            <div><a href="award.php?period=4">7,8月</a></div>
-            <div><a href="award.php?period=5">9,10月</a></div>
-            <div><a href="award.php?period=6">11,12月</a></div>
-            <div><a href="index.html">回首頁</a></div>
+            <?php
+            if(empty($_GET['period'])){
+                $_GET['period'] ='';
+            }
+            if($_GET['period'] == 1){
+                echo"<div class='btnA'><a href='award.php?period=1'>1,2月</a></div>";
+            }else{
+                echo"<div class='btn'><a href='award.php?period=1'>1,2月</a></div>";
+            }
+            if($_GET['period'] == 2){
+                echo"<div class='btnA'><a href='award.php?period=2'>3,4月</a></div>";
+            }else{
+                echo"<div class='btn'><a href='award.php?period=2'>3,4月</a></div>";
+            }
+            if($_GET['period'] == 3){
+                echo"<div class='btnA'><a href='award.php?period=3'>5,6月</a></div>";
+            }else{
+                echo"<div class='btn'><a href='award.php?period=3'>5,6月</a></div>";
+            }
+            if($_GET['period'] == 4){
+                echo"<div class='btnA'><a href='award.php?period=4'>7,8月</a></div>";
+            }else{
+                echo"<div class='btn'><a href='award.php?period=4'>7,8月</a></div>";
+            }
+            if($_GET['period'] == 5){
+                echo"<div class='btnA2'><a href='award.php?period=5'>9,10月</a></div>";
+            }else{
+                echo"<div class='btn'><a href='award.php?period=5'>9,10月</a></div>";
+            }
+            if($_GET['period'] == 6){
+                echo"<div class='btnA3'><a href='award.php?period=6'>11,12月</a></div>";
+            }else{
+                echo"<div class='btn'><a href='award.php?period=6'>11,12月</a></div>";
+            }
+            ?>
+            <div><a class="back" href="index.html"><i class="fas fa-angle-double-left"></i>回首頁</a></div>
 
         </div>
         <div class="right">
@@ -129,7 +139,15 @@
                 <input type="hidden" id='six1' name='six1' value="<?=$row['six1']?>">
                 <input type="hidden" id='six2' name='six2' value="<?=$row['six2']?>">
                 <input type="hidden" id='six3' name='six3' value="<?=$row['six3']?>">
-                <input type="submit" value="開獎">
+                <?php
+                    if(!empty($_GET['period'])){
+                        if(empty($row['six3'])){
+                            echo "<span class='notYet'>未開獎</span>";
+                        }else{
+                            echo "<input type='submit' value='開獎'>";
+                        }
+                    }
+                ?>          
             </form>
         </div>
     </div>

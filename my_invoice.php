@@ -5,32 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>我的發票</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <style>
-        .main{
-            width: 800px;
-            height: 600px;
-            background-color: aquamarine;
-            margin: auto;
-            position: relative;
-        }
-        .left{
-            width: 200px;
-            height: 100%;
-            background-color: blanchedalmond;
-            position: absolute;
-            text-align: center;
-            box-sizing: border-box;
-            padding: 20px;
-        }
-        .right{
-            width: 600px;
-            height: 100%;
-            background-color: rgb(128, 114, 131);
-            position: absolute;
-            left: 200px;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
+        td{
+            width:200px;
+            text-align:center;
         }
     </style>
 </head>
@@ -40,17 +20,53 @@
     ?>
     <div class="main"> 
         <div class="left">
-            <div><a href="my_invoice.php?period=1">1,2月</a></div>
-            <div><a href="my_invoice.php?period=2">3,4月</a></div>
-            <div><a href="my_invoice.php?period=3">5,6月</a></div>
-            <div><a href="my_invoice.php?period=4">7,8月</a></div>
-            <div><a href="my_invoice.php?period=5">9,10月</a></div>
-            <div><a href="my_invoice.php?period=6">11,12月</a></div>
-            <div><a href="index.html">回首頁</a></div>
+            <h2>發票存摺</h2>
+            <?php
+            if(empty($_GET['period'])){
+                $_GET['period'] ='';
+            }
+            if($_GET['period'] == 1){
+                echo"<div class='btnA'><a href='my_invoice.php?period=1'>1,2月</a></div>";
+            }else{
+                echo"<div class='btn'><a href='my_invoice.php?period=1'>1,2月</a></div>";
+            }
+            if($_GET['period'] == 2){
+                echo"<div class='btnA'><a href='my_invoice.php?period=2'>3,4月</a></div>";
+            }else{
+                echo"<div class='btn'><a href='my_invoice.php?period=2'>3,4月</a></div>";
+            }
+            if($_GET['period'] == 3){
+                echo"<div class='btnA'><a href='my_invoice.php?period=3'>5,6月</a></div>";
+            }else{
+                echo"<div class='btn'><a href='my_invoice.php?period=3'>5,6月</a></div>";
+            }
+            if($_GET['period'] == 4){
+                echo"<div class='btnA'><a href='my_invoice.php?period=4'>7,8月</a></div>";
+            }else{
+                echo"<div class='btn'><a href='my_invoice.php?period=4'>7,8月</a></div>";
+            }
+            if($_GET['period'] == 5){
+                echo"<div class='btnA2'><a href='my_invoice.php?period=5'>9,10月</a></div>";
+            }else{
+                echo"<div class='btn'><a href='my_invoice.php?period=5'>9,10月</a></div>";
+            }
+            if($_GET['period'] == 6){
+                echo"<div class='btnA3'><a href='my_invoice.php?period=6'>11,12月</a></div>";
+            }else{
+                echo"<div class='btn'><a href='my_invoice.php?period=6'>11,12月</a></div>";
+            }
+
+            // <div class="btn"><a href="my_invoice.php?period=2">3,4月</a></div>
+            // <div class="btn"><a href="my_invoice.php?period=3">5,6月</a></div>
+            // <div class="btn"><a href="my_invoice.php?period=4">7,8月</a></div>
+            // <div class="btn"><a href="my_invoice.php?period=5">9,10月</a></div>
+            // <div class="btn"><a href="my_invoice.php?period=6">11,12月</a></div>
+             ?>
+             <div class="back"><a href="index.html"><i class="fas fa-angle-double-left"></i>回首頁</a></div>
         </div>
         <div class="right"> 
             <div>我的發票</div>
-            <div style="overflow: auto; height: 550px;">
+            <div style="overflow: auto; height: 450px;">
                 <table>
                     <tr>
                         <td>號碼</td>
