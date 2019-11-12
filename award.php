@@ -130,6 +130,7 @@
                     }
                 ?>
                 </table>
+                <input type="hidden" id='year' name='year' value="<?=$row["year"]?>">
                 <input type="hidden" id='period' name='period' value="<?=$_GET['period']?>">
                 <input type="hidden" id='sp1' name='sp1' value="<?=$row['sp1']?>">
                 <input type="hidden" id='sp2' name='sp2' value="<?=$row['sp2']?>">
