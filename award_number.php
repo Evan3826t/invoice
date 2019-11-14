@@ -24,6 +24,17 @@
     </style>
 </head>
 <body>
+    <?php
+    if(!empty( $_GET['status'])){
+        if( $_GET['status'] == 1){
+            echo "<script>alert('新增成功')</script>";
+        }
+        if( $_GET['status'] == 2){
+            echo "<script>alert('新增失敗')</script>";
+        }
+
+    }
+    ?>
     <div class="main">
         <div class="left">
             <h2>輸入獎號</h2>

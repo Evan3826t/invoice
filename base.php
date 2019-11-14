@@ -10,7 +10,7 @@ function selectAll( $table){
 
 function selectFA( $table,$period){
     global $pdo;
-    $sql = "select * from $table where `period`=$period";
+    $sql = "select * from $table where period=$period";
     return $pdo->query($sql)->fetchAll(); 
 }
 function selectF( $table,$period){
@@ -25,6 +25,14 @@ function countIN($table, $period){
     global $pdo;
     $sql = "select count(*) as num from $table where `period`=$period ";
     return $pdo->query($sql)->fetch();
+}
+
+function insert( $table, $data){
+    global $pdo;
+    $row = "`" . implode("`,`", array_keys( $data)) . "`";
+    $value = "'" . implode("','", $data) . "'";
+    $sql = "insert into $table( $row) value ($value)";
+    return $pdo->exec($sql);
 }
 
 function jackpot($value, $award, $Enum, $num){

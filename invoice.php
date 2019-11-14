@@ -8,14 +8,13 @@
 </head>
 <body>
 <?php
-include("base.php");
-$year = $_POST['year'];
-$period = $_POST['period'];
-$Enum = $_POST['Enum'];
-$num = $_POST['num'];
-$expend = $_POST['expend'];
-$sql = "insert into `deposited`(`year`, `period`, `Enum`,`num`, `expend`) VALUES ('$year', '$period', '$Enum', '$num', '$expend')";
-$pdo->query($sql);
+include_once("base.php");
+$data['year'] = $_POST['year'];
+$data['period'] = $_POST['period'];
+$data['Enum'] = $_POST['Enum'];
+$data['num'] = $_POST['num'];
+$data['expend'] = $_POST['expend'];
+insert( "deposited", $data);
 header("location:index.html");
 
 ?>
