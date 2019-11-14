@@ -28,6 +28,9 @@
         text-decoration: none;
         color: black;
     }
+    td:not(:first-child){
+        text-align: center;
+    }
     </style>
 </head>
 <body>
@@ -63,26 +66,33 @@
                 </tr>
                 <?php
                 $row = selectFA("deposited", $_POST['period']);
+                $total = 0;
                 foreach( $row as $value){
 
 
                     if($value['num'] == $_POST['sp1']){
-                        echo "<tr><td>發票號碼：".$value['Enum']."-".$value['num'] ."</td><td>1000萬</td></tr>";
+                        echo "<tr><td>發票號碼：".$value['Enum']."-".$value['num'] ."</td><td>10000000</td></tr>";
+                        $total+= 10000000;
                     }
                     if($value['num'] == $_POST['sp2']){
-                        echo "<tr><td>發票號碼：".$value['Enum']."-".$value['num'] ."</td><td>200萬</td></tr>";
+                        echo "<tr><td>發票號碼：".$value['Enum']."-".$value['num'] ."</td><td>2000000</td></tr>";
+                        $total+= 2000000;
                     }
-                    jackpot($value['num'], $_POST['jackpot1'], $value['Enum'], $value['num']);
-                    jackpot($value['num'], $_POST['jackpot2'], $value['Enum'], $value['num']);
-                    jackpot($value['num'], $_POST['jackpot3'], $value['Enum'], $value['num']);
-                    sixAward($value['num'], $_POST['six1'], $value['Enum'], $value['num']);
-                    sixAward($value['num'], $_POST['six2'], $value['Enum'], $value['num']);
-                    sixAward($value['num'], $_POST['six3'], $value['Enum'], $value['num']);
+                    $total+= jackpot($value['num'], $_POST['jackpot1'], $value['Enum'], $value['num'], $total);
+                    $total+= jackpot($value['num'], $_POST['jackpot2'], $value['Enum'], $value['num'], $total);
+                    $total+= jackpot($value['num'], $_POST['jackpot3'], $value['Enum'], $value['num'], $total);
+                    $total+= sixAward($value['num'], $_POST['six1'], $value['Enum'], $value['num'], $total);
+                    $total+= sixAward($value['num'], $_POST['six2'], $value['Enum'], $value['num'], $total);
+                    $total+= sixAward($value['num'], $_POST['six3'], $value['Enum'], $value['num'], $total);
                 
 
                 }
 
                 ?>
+                <tr>
+                    <td style="color: red">贏得獎金</td>
+                    <td style="color: red"><?=$total?></td>
+                </tr>
                 <tr>
                     <td ><a class="back" href="index.html"><i class="fas fa-angle-double-left"></i>回首頁</a></td>
                 </tr>

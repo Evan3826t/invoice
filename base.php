@@ -36,32 +36,40 @@ function insert( $table, $data){
 }
 
 function jackpot($value, $award, $Enum, $num){
+    $total= 0;
     for($i= 0; $i< 6; $i++){
         if(substr($value, $i,8-$i) == substr($award, $i,8-$i)){
             switch($i){
                 case 0:
-                    $str ="20萬";
+                    $reward = 200000;
+                    $total+= 200000;
                     break;
                 case 1:
-                    $str = "4萬";
+                    $reward = 40000;
+                    $total+= 40000;
                     break;
                 case 2:
-                    $str = "1萬";
+                    $reward = 10000;
+                    $total+= 10000;
                     break;
                 case 3:
-                    $str = "4千";
+                    $reward = 4000;
+                    $total+= 4000;
                     break;
                 case 4:
-                    $str = "1千";
+                    $reward = 1000;
+                    $total+= 1000;
                     break;
                 case 5:
-                    $str = "2百";
+                    $reward = 200;
+                    $total+= 200;
                     break;
             }
-            echo "<tr><td>發票號碼：".$Enum."-".$num ."</td><td>".$str."</td></tr>";
+            echo "<tr><td>發票號碼：".$Enum."-".$num ."</td><td>".$reward."</td></tr>";
             break;
         }
     }
+    return $total;
 }
 
 function sixAward($value, $award, $Enum, $num){
