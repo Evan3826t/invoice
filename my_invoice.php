@@ -27,7 +27,7 @@
     ?>
     <div class="main"> 
         <div class="left">
-            <h2>發票存摺</h2>
+            <h2><i class="fas fa-piggy-bank"></i> 發票存摺</h2>
             <?php
             if(empty($_GET['period'])){
                 $_GET['period'] ='';
@@ -93,8 +93,8 @@
                             <?php
                             if(!empty($_GET['del'])){
                                 del( "deposited", $_GET['del']);
-                                // 重整頁面 0.01秒
-                                header("refresh:0.01");
+                                // 重整頁面 0.01秒                    
+                                header("location:http://localhost/invoice/my_invoice.php?period=" . $_GET['period']);
                             }
                             }
                            

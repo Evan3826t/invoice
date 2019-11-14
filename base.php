@@ -51,13 +51,13 @@ function del( $table, $id){
 function update( $table, $id, $year, $period, $Enum, $num, $expend){
     global $pdo;
     $sql = "update $table set year=$year, period=$period, Enum='$Enum', num=$num, expend=$expend where id=$id";
-    $pdo->exec($sql);
+    $pdo->exec( $sql);
 }
 
-function jackpot($value, $award, $Enum, $num){
+function jackpot( $value, $award, $Enum, $num){
     $total= 0;
-    for($i= 0; $i< 6; $i++){
-        if(substr($value, $i,8-$i) == substr($award, $i,8-$i)){
+    for( $i= 0; $i< 6; $i++){
+        if(substr( $value, $i,8-$i) == substr($award, $i,8-$i)){
             switch($i){
                 case 0:
                     $reward = 200000;
@@ -93,7 +93,7 @@ function jackpot($value, $award, $Enum, $num){
 
 function sixAward($value, $award, $Enum, $num){
     if(substr($value, 5, 3) == $award){        
-        echo "<tr><td>發票號碼：".$Enum."-".$num ."</td><td>2百</td></tr>";
+        echo "<tr><td>發票號碼：".$Enum."-".$num ."</td><td>200</td></tr>";
     }
 }
 ?>
