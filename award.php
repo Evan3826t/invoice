@@ -8,7 +8,12 @@
     <title>發票兌獎</title>
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    
+    <style>
+    .award{
+        color: red;
+        padding-left: 80px;
+    }
+    </style>
     
    
 </head>
@@ -18,7 +23,7 @@
     ?>
     <div class="main">
         <div class="left">
-            <h2>兌獎區</h2>
+            <h2><i class="fas fa-trophy"></i> 兌獎區</h2>
             <?php
             if(empty($_GET['period'])){
                 $_GET['period'] ='';
@@ -66,27 +71,27 @@
                         ?> 
                         <tr>
                         <td>年度</td>
-                        <td><?=$row["year"]?></td>
+                        <td class="award"><?=$row["year"]?></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>月份</td>
-                        <td><?=$row['period']?></td>
+                        <td class="award"><?=$row['period']?></td>
                         <td>獎金</td>
                     </tr>
                     <tr>
                         <td>特別獎</td>
-                        <td><?=$row['sp1']?></td>
+                        <td class="award"><?=$row['sp1']?></td>
                         <td>1000萬元</td>
                     </tr>
                     <tr>
                         <td>特獎</td>
-                        <td><?=$row['sp2']?></td>
+                        <td class="award"><?=$row['sp2']?></td>
                         <td>200萬元</td>
                     </tr>
                     <tr>
                         <td>頭獎</td>
-                        <td><?=$row['jackpot1']?><br>
+                        <td class="award"><?=$row['jackpot1']?><br>
                             <?=$row['jackpot2']?><br>
                             <?=$row['jackpot3']?></td>
                         </td>
@@ -119,7 +124,7 @@
                     </tr>
                     <tr>
                         <td>增開六獎</td>
-                        <td><?=$row['six1']?><br>
+                        <td class="award"><?=$row['six1']?><br>
                             <?=$row['six2']?><br>
                             <?=$row['six3']?></td>
                         </td>

@@ -37,7 +37,7 @@
     ?>
     <div class="main">
         <div class="left">
-            <h2>輸入獎號</h2>
+            <h2><i class="fas fa-keyboard"></i> 輸入獎號</h2>
             <a class="back" href="index.html"><i class="fas fa-angle-double-left"></i>回首頁</a>
         </div>
         <div class="right">
