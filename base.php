@@ -13,13 +13,20 @@ function selectFA( $table,$period){
     $sql = "select * from $table where period=$period";
     return $pdo->query($sql)->fetchAll(); 
 }
-function selectF( $table,$period){
+function selectF( $table, $period){
     global $pdo;
     $sql = "select * from $table where `period`=$period";
     return $pdo->query($sql)->fetch(PDO::FETCH_ASSOC); 
 }
 // $row = "`" . implode(",", array_keys( $table)) . "`";
 // $value = "'" . implode(",", $data) . "'";
+
+function selectId( $table, $id){
+    global $pdo;
+    $sql = "select * from $table where `id`=$id";
+    echo $sql;
+    return $pdo->query($sql)->fetch(PDO::FETCH_ASSOC); 
+}
 
 function countIN($table, $period){
     global $pdo;
@@ -33,6 +40,18 @@ function insert( $table, $data){
     $value = "'" . implode("','", $data) . "'";
     $sql = "insert into $table( $row) value ($value)";
     return $pdo->exec($sql);
+}
+
+function del( $table, $id){
+    global $pdo;
+    $sql = "delete from $table where `id`=$id";
+    $pdo->exec($sql);
+}
+
+function update( $table, $id, $year, $period, $Enum, $num, $expend){
+    global $pdo;
+    $sql = "update $table set year=$year, period=$period, Enum='$Enum', num=$num, expend=$expend where id=$id";
+    $pdo->exec($sql);
 }
 
 function jackpot($value, $award, $Enum, $num){

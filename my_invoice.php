@@ -12,6 +12,13 @@
             width:200px;
             text-align:center;
         }
+        .edit{
+            font-size: 18px;
+            padding: 2px;
+            border: 2px solid black;
+            border-radius: 25%;
+            background-color: black;
+        }
     </style>
 </head>
 <body>
@@ -71,6 +78,7 @@
                     <tr>
                         <td>號碼</td>
                         <td>金額</td>
+                        <td>編輯</td>
                     </tr>
                 <?php
                     if(!empty($_GET['period'])){
@@ -80,10 +88,18 @@
                             <tr>
                                 <td><?=$invoice['Enum']?>-<?=$invoice['num']?></td>
                                 <td><?=$invoice['expend']?></td>
+                                <td><a class="edit" href="edit.php?period=<?=$_GET['period']?>&id=<?=$invoice['id']?>">修改</a>&nbsp&nbsp&nbsp<a class="edit" href="my_invoice.php?period=<?=$_GET['period']?>&del=<?=$invoice['id']?>">刪除</a></td>
                             </tr>
                             <?php
+                            if(!empty($_GET['del'])){
+                                del( "deposited", $_GET['del']);
+                                // 重整頁面 0.01秒
+                                header("refresh:0.01");
+                            }
+                            }
+                           
                         }
-                    }
+                    
                 ?>
                 </table>
             </div>
