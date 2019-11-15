@@ -158,7 +158,7 @@
                 <input type="hidden" id='six3' name='six3' value="<?=$row['six3']?>">
                 <?php
                     if(!empty($_GET['period'])){
-                        if(empty($row['six3'])){
+                        if(empty($row['six1'])){
                             echo "<span class='notYet'>未開獎</span>";
                         }else{
                             echo "<input type='submit' value='開獎'>";
