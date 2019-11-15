@@ -24,7 +24,6 @@ function selectF( $table, $period){
 function selectId( $table, $id){
     global $pdo;
     $sql = "select * from $table where `id`=$id";
-    echo $sql;
     return $pdo->query($sql)->fetch(PDO::FETCH_ASSOC); 
 }
 
