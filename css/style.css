@@ -98,3 +98,12 @@ a{
     box-shadow: 2px 2px 2px gray;
     padding: 3px;
 }
+#Enum{
+    width: 25px;
+}
+#num{
+    width: 115px;
+}
+#year{
+    width: 72px;
+}

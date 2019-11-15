@@ -97,12 +97,16 @@
                                 header("location:http://localhost/invoice/my_invoice.php?period=" . $_GET['period']);
                             }
                             }
-                           
+                            $sum= countIn( "deposited", $_GET['period']);
+                        }else{
+                            $sum['num']='';
                         }
                     
+
                 ?>
                 </table>
             </div>
+            <div>發票總數：<?= $sum['num']?></div>
         </div>
     </div>
 </body>
