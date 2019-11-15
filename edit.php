@@ -28,6 +28,8 @@
 <div class="main">
             <div class="left">
                 <div class="title"><i class="far fa-edit"></i> 編輯發票</div>
+                <div class="back"><a href="my_invoice.php"><i class="fas fa-angle-double-left"></i>回上頁</a></div>
+
             </div>
             <div class="right">
                 <table>
@@ -93,7 +95,7 @@
                         </tr>
                         <input type="hidden" value="<?=$_GET['id']?>" name="id">    
                         <tr>
-                            <td><input type="submit" value="修改"></td>
+                            <td><input type="submit" value="修改" class="sub"></td>
                         </tr>                           
                     </tr>                          
                     </form>

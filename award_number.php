@@ -114,7 +114,7 @@
                         <td>2百元</td>
                     </tr>
                     <tr>
-                        <td><input type="submit" value="送出"> </td>
+                        <td><input type="submit" value="送出" class="sub"> </td>
                     </tr>
                 </table>
                 

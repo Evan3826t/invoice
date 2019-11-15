@@ -161,7 +161,7 @@
                         if(empty($row['six1'])){
                             echo "<span class='notYet'>未開獎</span>";
                         }else{
-                            echo "<input type='submit' value='開獎'>";
+                            echo "<input type='submit' value='開獎' class='sub'>";
                         }
                     }
                 ?>          
