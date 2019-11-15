@@ -6,6 +6,15 @@
     box-shadow: 5px 5px 5px black;
     margin-top: 50px;
     border: 2px solid gray;
+    font-family: "標楷體";
+}
+.title{
+    text-align: center;
+}
+.bg{
+    position: relative;
+    left: -50px;
+    top: 50px;
 }
 .left{
     width: 150px;
@@ -40,6 +49,8 @@ a{
 .btn{
     height: 40px;
     line-height: 40px;
+    font-family: "標楷體";
+
 }
 .btnA{
     height: 40px;

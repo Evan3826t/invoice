@@ -12,6 +12,12 @@
     .award{
         color: red;
         padding-left: 80px;
+
+    }
+    .bg{
+        left: 0px;
+        top: 10px;
+
     }
     </style>
     
@@ -131,6 +137,11 @@
                         <td>2百元</td>
                     </tr>
 
+                        <?php
+                    }else{
+                        ?>
+                        <div class="title">我要得獎！</div>
+                        <div class="bg"><img src="./images/reward.jpg" alt="" width="100%" height="80%"></div>
                         <?php
                     }
                 ?>

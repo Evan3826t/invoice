@@ -19,6 +19,7 @@
             border-radius: 25%;
             background-color: black;
         }
+        
     </style>
 </head>
 <body>
@@ -72,17 +73,21 @@
              <div class="back"><a href="index.html"><i class="fas fa-angle-double-left"></i>回首頁</a></div>
         </div>
         <div class="right"> 
-            <div>我的發票</div>
-            <div style="overflow: auto; height: 450px;">
-                <table>
-                    <tr>
-                        <td>號碼</td>
-                        <td>金額</td>
-                        <td>編輯</td>
-                    </tr>
+            
+                    
                 <?php
                     if(!empty($_GET['period'])){
                         $row=selectFA("deposited", $_GET['period']);
+                        ?>
+                        <div>我的發票</div>
+                            <div style="overflow: auto; height: 450px;">
+                                <table>
+                                    <tr>
+                                        <td>號碼</td>
+                                        <td>金額</td>
+                                        <td>編輯</td>
+                                    </tr>
+                        <?php
                         foreach($row as $invoice){
                             ?>
                             <tr>
@@ -100,6 +105,10 @@
                             $sum= countIn( "deposited", $_GET['period']);
                         }else{
                             $sum['num']='';
+                            ?>
+                            <div class="title">養滿小豬筒</div>
+                            <div class="bg"><img src="./images/pig.jpg" alt=""></div>
+                            <?php
                         }
                     
 

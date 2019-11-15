@@ -15,7 +15,7 @@
             width: 100px;
         }
         td:nth-child(2){
-            width: 450px;
+            width: 500px;
         }
         td:nth-child(3){
             width: 250px;
